@@ -1,0 +1,9 @@
+com/job/models/Application$Status.class
+com/job/models/Seeker.class
+com/job/models/Skill.class
+com/job/models/SeekerSkill.class
+com/job/models/JobSkill.class
+com/job/models/Application.class
+com/job/models/Job.class
+com/job/API.class
+com/job/models/Employer.class
