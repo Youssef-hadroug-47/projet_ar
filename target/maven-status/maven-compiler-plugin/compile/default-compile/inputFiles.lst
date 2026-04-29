@@ -7,6 +7,7 @@
 /home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/authentication/service/AuthentificationService.java
 /home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/employers/controller/EmployersController.java
 /home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/employers/repository/EmployersRepository.java
+/home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/employers/repository/JobRepository.java
 /home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/employers/service/EmployersService.java
 /home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/models/Application.java
 /home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/models/Employer.java
@@ -18,6 +19,11 @@
 /home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/search/controller/SearchController.java
 /home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/search/repository/SearchRepository.java
 /home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/search/service/SearchService.java
+/home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/security/AuthRequest.java
+/home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/security/AuthResponse.java
+/home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/security/JwtUtil.java
+/home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/security/RegisterRequest.java
+/home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/security/SecurityConfig.java
 /home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/seekers/controller/SeekersController.java
 /home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/seekers/respository/SeekersRepository.java
 /home/youssefhadroug/MyCode/Ateliers/AtelierAppRep/projet/src/main/java/com/job/seekers/service/SeekersService.java
