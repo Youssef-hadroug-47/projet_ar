@@ -9,7 +9,7 @@ import com.job.security.AuthResponse;
 import com.job.security.RegisterRequest;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 public class AuthentificationController {
 
     private AuthentificationService authService;
