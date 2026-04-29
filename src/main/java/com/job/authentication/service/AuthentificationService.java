@@ -22,7 +22,6 @@ public class AuthentificationService {
     private  PasswordEncoder passwordEncoder;
     private  JwtUtil jwtUtil;
 
-    // simple in-memory blacklist (for logout)
     private final Set<String> invalidatedTokens = new HashSet<>();
 
     public AuthentificationService(SeekersRepository seekerRepository,
@@ -35,7 +34,6 @@ public class AuthentificationService {
         this.jwtUtil = jwtUtil;
     }
 
-    // 📝 REGISTER
     public void register(RegisterRequest request) {
 
         String encodedPassword = passwordEncoder.encode(request.getPassword());
@@ -63,10 +61,8 @@ public class AuthentificationService {
         }
     }
 
-    // 🔐 LOGIN
     public AuthResponse login(AuthRequest request) {
 
-        // check seeker
         Seeker seeker = seekerRepository.findByEmail(request.getEmail()).orElse(null);
         if (seeker != null &&
             passwordEncoder.matches(request.getPassword(), seeker.getPassword())) {
@@ -77,7 +73,6 @@ public class AuthentificationService {
             return new AuthResponse(accessToken, refreshToken);
         }
 
-        // check employer
         Employer employer = employerRepository.findByEmail(request.getEmail()).orElse(null);
         if (employer != null &&
             passwordEncoder.matches(request.getPassword(), employer.getPassword())) {
@@ -91,7 +86,6 @@ public class AuthentificationService {
         throw new RuntimeException("Invalid credentials");
     }
 
-    // 🔄 REFRESH TOKEN
     public AuthResponse refresh(String refreshToken) {
 
         if (invalidatedTokens.contains(refreshToken)) {
@@ -105,7 +99,6 @@ public class AuthentificationService {
         return new AuthResponse(newAccessToken, refreshToken);
     }
 
-    // 🚪 LOGOUT
     public void logout(String token) {
         invalidatedTokens.add(token);
     }
