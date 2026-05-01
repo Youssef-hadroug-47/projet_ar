@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import com.job.authentication.service.AuthentificationService;
 import com.job.security.AuthRequest;
 import com.job.security.AuthResponse;
+import com.job.security.JwtUtil;
 import com.job.security.RegisterRequest;
 
 @RestController
@@ -21,6 +22,7 @@ public class AuthentificationController {
 
     @PostMapping("/register")
     public String register(@RequestBody RegisterRequest request) {
+        System.out.println("youssef");
         authService.register(request);
         return "User registered successfully";
     }
@@ -28,6 +30,7 @@ public class AuthentificationController {
 
     @PostMapping("/login")
     public AuthResponse login(@RequestBody AuthRequest request) {
+        System.out.println("hadroug");
         return authService.login(request);
     }
 
@@ -45,5 +48,12 @@ public class AuthentificationController {
         authService.logout(token);
 
         return "Logged out successfully";
+    }
+
+    @GetMapping("/test")
+    public String test(@RequestHeader("Authorization") String header){
+        String token = header.substring(7);
+        JwtUtil jwtUtil = new JwtUtil();
+        return "isExpired :" + (jwtUtil.validateToken(token, "test@test.com") ? "Yes" : "No");
     }
 }
